@@ -17,51 +17,55 @@ export default function Layout({comments, details, table}: WorkflowLayoutProps):
 
 
     return (
-        <div className={"grid md:grid-cols-3 md:grid-rows-9 gap-6 grid-cols-1 grid-rows-auto"}>
-            <div className={"md:col-span-2 md:row-span-9 md:col-start-1 col-span-1"}>
-                <Card>
-                    <CardHeader>
-                        <CardTitle>
-                            Table
-                        </CardTitle>
-                        <CardDescription>
-                            A table
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        {table}
-                    </CardContent>
-                </Card>
-            </div>
-            <div className={"md:col-span-1 md:row-span-6 md:col-start-3 md:row-start-1 col-span-1"}>
-                <Card>
-                    <CardHeader>
-                        <CardTitle>
-                            Details
-                        </CardTitle>
-                        <CardDescription>
-                           Some details
-                        </CardDescription>
-                    </CardHeader>
+        <div className={"flex min-h-screen"}>
+            <div className={"flex container mx-auto justify-center items-center"}>
+                <div className={"grid md:grid-cols-3 md:grid-rows-9 gap-6 grid-cols-1 grid-rows-auto"}>
+                    <div className={"md:col-span-2 md:row-span-9 md:col-start-1 col-span-1"}>
+                        <Card className={"h-full"}>
+                            <CardHeader>
+                                <CardTitle>
+                                    Table
+                                </CardTitle>
+                                <CardDescription>
+                                    A table
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                {table}
+                            </CardContent>
+                        </Card>
+                    </div>
+                    <div className={"md:col-span-1 md:row-span-6 md:col-start-3 md:row-start-1 col-span-1"}>
+                        <Card className={"h-full"}>
+                            <CardHeader>
+                                <CardTitle>
+                                    Details
+                                </CardTitle>
+                                <CardDescription>
+                                    Some details
+                                </CardDescription>
+                            </CardHeader>
 
-                        {details}
+                            {details}
 
-                </Card>
-            </div>
-            <div className={"md:col-span-1 md:row-span-3 md:col-start-3 col-span-1"}>
-                <Card>
-                    <CardHeader>
-                        <CardTitle>
-                            Table
-                        </CardTitle>
-                        <CardDescription>
-                            A table
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        {comments}
-                    </CardContent>
-                </Card>
+                        </Card>
+                    </div>
+                    <div className={"md:col-span-1 md:row-span-3 md:col-start-3 col-span-1"}>
+                        <Card className={"h-full"}>
+                            <CardHeader>
+                                <CardTitle>
+                                    Comments
+                                </CardTitle>
+                                <CardDescription>
+                                    Some comments
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                {comments}
+                            </CardContent>
+                        </Card>
+                    </div>
+                </div>
             </div>
         </div>
     );
