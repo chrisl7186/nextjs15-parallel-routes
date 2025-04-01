@@ -11,15 +11,15 @@ type WorkflowLayoutProps = {
 
 export default function Layout({comments, details, table}: WorkflowLayoutProps): ReactElement {
 
-    console.log("table", table)
-    console.log("comments", comments)
-    console.log("details", details)
+    // console.log("table", table)
+    // console.log("comments", comments)
+    // console.log("details", details)
 
 
     return (
         <div className={"flex min-h-screen"}>
-            <div className={"flex container mx-auto justify-center items-center"}>
-                <div className={"grid md:grid-cols-3 md:grid-rows-9 gap-6 grid-cols-1 grid-rows-auto"}>
+            <div className={"container mx-auto justify-center items-center py-36"}>
+                <div className={"grid md:grid-cols-3 md:grid-rows-9 gap-6 grid-cols-1 grid-rows-auto max-h-[600px]"}>
                     <div className={"md:col-span-2 md:row-span-9 md:col-start-1 col-span-1"}>
                         <Card className={"h-full"}>
                             <CardHeader>
@@ -60,7 +60,7 @@ export default function Layout({comments, details, table}: WorkflowLayoutProps):
                                     Some comments
                                 </CardDescription>
                             </CardHeader>
-                            <CardContent>
+                            <CardContent className={"overflow-auto"}>
                                 {comments}
                             </CardContent>
                         </Card>

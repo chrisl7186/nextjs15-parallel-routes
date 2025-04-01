@@ -1,6 +1,6 @@
 import React from 'react';
-import {Details} from "@/data/testdata";
 
+import {Details} from "@/data/testdata";
 
 
 type WorkflowDetailsProps = {

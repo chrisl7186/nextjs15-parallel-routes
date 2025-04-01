@@ -1,3 +1,8 @@
+import fs from 'fs';
+import path from 'path';
+
+
+
 export const testTableData = [
     {
         id: "1",
@@ -16,11 +21,39 @@ export const testTableData = [
         name: "Jane",
         email: "jane@example.com",
         description: "update data"
+    },
+    {
+        id: "4",
+        name: "Jacob",
+        email: "jacob@example.com",
+        description: "update stuff"
+    },
+    {
+        id: "5",
+        name: "Jimbob",
+        email: "jimbob@example.com",
+        description: "update website"
     }
 ]
 
 
 export type TableData = typeof testTableData
+
+
+
+
+export async function getTableJSONData(): Promise<TableData> {
+    // Resolve the path to the JSON file
+    const filePath = path.join(process.cwd(), '/src/data/tableTestData.json');
+
+    // Read the file synchronously
+    const fileData = await fs.promises.readFile(filePath, 'utf8');
+
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Parse the JSON string into an array of objects
+    return JSON.parse(fileData);
+}
 
 
 export const testCommentsData = [

@@ -1,16 +1,23 @@
+"use client";
+
 import React, {useTransition} from 'react';
+
 import {Button} from "@/components/ui/button";
 import {workflowActions} from "@/actions/actions";
 import {Loader2} from "lucide-react";
 
 
-export default function WorkflowDetailsActions({}) {
+type WorkflowDetailsActionsProps = {
+    workflowId?: string;
+}
+
+export default function WorkflowDetailsActions({workflowId}: WorkflowDetailsActionsProps) {
     const [isPending, startTransition] = useTransition()
 
     function handleActionClick(type: 'reject' | 'approve') {
 
         startTransition(async () => {
-            await workflowActions(type);
+            await workflowActions(workflowId || "2", type);
         })
 
 
@@ -18,7 +25,7 @@ export default function WorkflowDetailsActions({}) {
 
 
     return (
-        <div className={"flex justify-between"}>
+        <div className={"flex justify-between w-full"}>
             <Button disabled={isPending} onClick={() => {
                 handleActionClick('reject');
             }}>

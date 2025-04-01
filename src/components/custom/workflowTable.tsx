@@ -5,10 +5,10 @@ import React from 'react';
 import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {Button} from "@/components/ui/button";
 import {TableData} from "@/data/testdata";
-import { useRouter } from 'next/navigation'
+import {useRouter} from 'next/navigation'
 
 type WorkflowTableProps = {
-    data:TableData
+    data: TableData
 }
 
 export default function WorkflowTable({data}: WorkflowTableProps) {

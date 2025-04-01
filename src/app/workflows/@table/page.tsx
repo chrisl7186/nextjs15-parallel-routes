@@ -1,7 +1,7 @@
 import React from 'react';
 
 import WorkflowTable from "@/components/custom/workflowTable";
-import {testTableData} from "@/data/testdata";
+import {getTableJSONData, testTableData} from "@/data/testdata";
 
 
 export async function tableData(): Promise<typeof testTableData> {
@@ -12,7 +12,7 @@ export async function tableData(): Promise<typeof testTableData> {
 
 export default async function TablePage({}) {
 
-    const data = await tableData();
+    const data = await getTableJSONData();
 
 
     return (
