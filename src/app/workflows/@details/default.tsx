@@ -4,7 +4,7 @@ import {CardContent} from "@/components/ui/card";
 
 export default function Default({}) {
 
-    console.log("Default details loaded.")
+    console.log("Rendering default details")
 
     return (
         <CardContent>

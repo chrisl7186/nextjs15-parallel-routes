@@ -2,6 +2,7 @@
   "name": "parallel-routing",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "concurrently \"next dev --turbopack\" \"json-server --watch src/data/db.json --port 3001\"",
     "build": "next build",

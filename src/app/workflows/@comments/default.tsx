@@ -3,7 +3,7 @@ import {Skeleton} from "@/components/ui/skeleton";
 
 export default function Default({}) {
 
-    console.log("Default comments loaded.")
+    console.log("Rendering default comments")
 
     return (
         <Skeleton className="w-[100px] h-[20px] rounded-full" />

@@ -6,8 +6,9 @@ import {Comments} from "@/types/types";
 
 export default async function CommentsPage({}) {
 
-    console.log("Rendering comments:");
+    console.log("Rendering page comments");
 
+    // const response =  await fetch("http://localhost:3001/comments");
     const response =  await fetch("http://localhost:3001/comments", { cache: "no-store" });
     const comments: Comments[] = await response.json();
     await new Promise((resolve) => setTimeout(resolve, 3000));

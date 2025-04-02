@@ -1,6 +1,5 @@
 import React, {ReactElement, Suspense} from 'react';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
-import {DynamicRouteParams} from "@/types/types";
 import AnnoyingSelectedSegmentWrapper from "@/components/custom/annoyingSelectedSegmentWrapper";
 
 
@@ -8,22 +7,14 @@ type WorkflowLayoutProps = {
     comments: ReactElement
     table: ReactElement
     details: ReactElement
-} & DynamicRouteParams
+}
 
 
 export default async function Layout({comments, details, table}: WorkflowLayoutProps) {
 
-    // const resolved= await params;
-    // console.log(resolved);
-
-
     // console.log("table", table)
     // console.log("comments", comments)
     // console.log("details", details)
-
-    // let workflowId = 5;
-
-    // console.log(workflowId);
 
     return (
         <div className={"flex min-h-screen"}>
@@ -59,9 +50,9 @@ export default async function Layout({comments, details, table}: WorkflowLayoutP
                             <Suspense fallback={<CardContent>
                                 <div>Loading from suspense</div>
                             </CardContent>}>
-                                <AnnoyingSelectedSegmentWrapper selectedSegment={"details"}>
+                                {/*<AnnoyingSelectedSegmentWrapper>*/}
                                     {details}
-                                </AnnoyingSelectedSegmentWrapper>
+                                {/*</AnnoyingSelectedSegmentWrapper>*/}
                             </Suspense>
 
                         </Card>
@@ -78,9 +69,9 @@ export default async function Layout({comments, details, table}: WorkflowLayoutP
                             </CardHeader>
                             <CardContent className={"overflow-auto"}>
                                 <Suspense fallback={<div>Loading from suspense</div>}>
-                                    <AnnoyingSelectedSegmentWrapper selectedSegment={"comments"}>
+                                    {/*<AnnoyingSelectedSegmentWrapper>*/}
                                         {comments}
-                                    </AnnoyingSelectedSegmentWrapper>
+                                    {/*</AnnoyingSelectedSegmentWrapper>*/}
                                 </Suspense>
                             </CardContent>
                         </Card>

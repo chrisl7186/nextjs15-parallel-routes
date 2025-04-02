@@ -17,6 +17,10 @@ export default function WorkflowTable({data}: WorkflowTableProps) {
     const router = useRouter();
 
     return (
+        <>
+        {/*<Button asChild>*/}
+        {/*    <Link href={"/workflows"}>Home</Link>*/}
+        {/*</Button>*/}
         <Table>
             <TableCaption>A list of your recent workflows</TableCaption>
             <TableHeader>
@@ -25,7 +29,7 @@ export default function WorkflowTable({data}: WorkflowTableProps) {
                     <TableHead>Name</TableHead>
                     <TableHead className="">Email</TableHead>
                     <TableHead className="">Description</TableHead>
-                    <TableHead className="text-right">Actions</TableHead>
+                    <TableHead className="">Actions</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -50,5 +54,6 @@ export default function WorkflowTable({data}: WorkflowTableProps) {
                 })}
             </TableBody>
         </Table>
+            </>
     );
 }

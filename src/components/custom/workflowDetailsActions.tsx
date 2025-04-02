@@ -21,8 +21,8 @@ export default function WorkflowDetailsActions({workflowId}: WorkflowDetailsActi
         startTransition(async () => {
 
             await workflowActions(workflowId, type);
-            // router.push("/workflows");
             // router.refresh();
+            // router.push("/workflows");
             // router.replace("/workflows");
 
         })

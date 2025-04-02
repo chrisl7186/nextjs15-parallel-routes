@@ -4,7 +4,7 @@ import {CardContent} from "@/components/ui/card";
 export default function Loading({}) {
     return (
         <CardContent>
-            <div>loading...</div>
+            <div>loading from details loading.tsx...</div>
         </CardContent>
     );
 }
