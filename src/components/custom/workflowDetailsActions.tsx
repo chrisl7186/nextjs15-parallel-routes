@@ -5,21 +5,27 @@ import React, {useTransition} from 'react';
 import {Button} from "@/components/ui/button";
 import {workflowActions} from "@/actions/actions";
 import {Loader2} from "lucide-react";
+import { useRouter } from "next/navigation";
 
 
 type WorkflowDetailsActionsProps = {
-    workflowId?: string;
+    workflowId: string;
 }
 
 export default function WorkflowDetailsActions({workflowId}: WorkflowDetailsActionsProps) {
     const [isPending, startTransition] = useTransition()
+    const router = useRouter();
 
     function handleActionClick(type: 'reject' | 'approve') {
 
         startTransition(async () => {
-            await workflowActions(workflowId || "2", type);
-        })
 
+            await workflowActions(workflowId, type);
+            // router.push("/workflows");
+            // router.refresh();
+            // router.replace("/workflows");
+
+        })
 
     }
 

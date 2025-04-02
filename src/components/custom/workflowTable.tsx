@@ -4,11 +4,13 @@ import React from 'react';
 
 import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {Button} from "@/components/ui/button";
-import {TableData} from "@/data/testdata";
+
 import {useRouter} from 'next/navigation'
+import Link from "next/link";
+import {TableData} from "@/types/types";
 
 type WorkflowTableProps = {
-    data: TableData
+    data: TableData[]
 }
 
 export default function WorkflowTable({data}: WorkflowTableProps) {
@@ -35,9 +37,14 @@ export default function WorkflowTable({data}: WorkflowTableProps) {
                             <TableCell>{item.name}</TableCell>
                             <TableCell className="">{item.email}</TableCell>
                             <TableCell className="">{item.description}</TableCell>
-                            <TableCell className="text-right"><Button onClick={() => {
+                            <TableCell className="flex gap-3">
+                                <Button onClick={() => {
                                 router.push(`/workflows/${item.id}`);
-                            }}>View</Button></TableCell>
+                            }}>View with router push</Button>
+                                <Button asChild>
+                                    <Link href={`/workflows/${item.id}`}>View with link comp</Link>
+                                </Button>
+                            </TableCell>
                         </TableRow>
                     )
                 })}

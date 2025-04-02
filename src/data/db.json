@@ -1,0 +1,106 @@
+{
+  "workflows": [
+    {
+      "id": "1",
+      "name": "John",
+      "email": "john@example.com",
+      "description": "update records"
+    },
+    {
+      "id": "2",
+      "name": "Jack",
+      "email": "jack@example.com",
+      "description": "update users"
+    },
+    {
+      "id": "3",
+      "name": "Jane",
+      "email": "jane@example.com",
+      "description": "update data"
+    },
+    {
+      "id": "4",
+      "name": "Jacob",
+      "email": "jacob@example.com",
+      "description": "update stuff"
+    },
+    {
+      "id": "5",
+      "name": "Jimbob",
+      "email": "jimbob@example.com",
+      "description": "update website"
+    }
+  ],
+  "details": [
+    {
+      "id": "1",
+      "title": "Task update records",
+      "description": "This is a detailed description of the task that needs to be completed.",
+      "status": "pending",
+      "assignee": "John Doe",
+      "createdAt": "2023-04-01",
+      "priority": "High",
+      "dueDate": "2023-04-15"
+    },
+    {
+      "id": "2",
+      "title": "Review budget report",
+      "description": "Review and approve the latest quarterly budget report.",
+      "status": "in-progress",
+      "assignee": "Jane Smith",
+      "createdAt": "2023-03-28",
+      "priority": "Medium",
+      "dueDate": "2023-04-10"
+    },
+    {
+      "id": "3",
+      "title": "Fix login issue",
+      "description": "Users are experiencing issues logging into the portal. Investigate and fix the issue.",
+      "status": "pending",
+      "assignee": "Alice Johnson",
+      "createdAt": "2023-03-30",
+      "priority": "High",
+      "dueDate": "2023-04-08"
+    },
+    {
+      "id": "4",
+      "title": "Update API documentation",
+      "description": "Ensure the API documentation is up-to-date with recent changes.",
+      "status": "completed",
+      "assignee": "Bob Williams",
+      "createdAt": "2023-03-25",
+      "priority": "Low",
+      "dueDate": "2023-04-05"
+    },
+    {
+      "id": "5",
+      "title": "Prepare presentation",
+      "description": "Create a presentation for the upcoming stakeholder meeting.",
+      "status": "in-progress",
+      "assignee": "Sarah Brown",
+      "createdAt": "2023-04-02",
+      "priority": "High",
+      "dueDate": "2023-04-12"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "author": "John Doe",
+      "content": "This needs to be reviewed carefully.",
+      "createdAt": "2023-04-01T10:30:00Z"
+    },
+    {
+      "id": "2",
+      "author": "Jane Smith",
+      "content": "I found some issues with the implementation.",
+      "createdAt": "2023-04-01T11:45:00Z"
+    },
+    {
+      "id": "3",
+      "author": "Mike Johnson",
+      "content": "Looks good to me, ready for approval.",
+      "createdAt": "2023-04-02T09:15:00Z"
+    }
+  ]
+}

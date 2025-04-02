@@ -1,23 +1,19 @@
 import React from 'react';
 
 import WorkflowTable from "@/components/custom/workflowTable";
-import {getTableJSONData, testTableData} from "@/data/testdata";
-
-
-export async function tableData(): Promise<typeof testTableData> {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    return testTableData;
-}
-
+import {TableData} from "@/types/types";
 
 export default async function TablePage({}) {
 
-    const data = await getTableJSONData();
+    const response =  await fetch("http://localhost:3001/workflows", { cache: "no-store" });
+    // const response =  await fetch("http://localhost:3001/workflows");
+    const workflows: TableData[] = await response.json();
+    await new Promise((resolve) => setTimeout(resolve, 3000));
 
 
     return (
         <div>
-            <WorkflowTable data={data} />
+            <WorkflowTable data={workflows} />
         </div>
     );
 }

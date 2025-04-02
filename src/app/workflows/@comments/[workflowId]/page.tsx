@@ -1,17 +1,16 @@
 import React from 'react';
 
-import {Comments, testCommentsData} from "@/data/testdata";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
-
-
-export async function commentData(): Promise<Comments> {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    return testCommentsData;
-}
+import {Comments} from "@/types/types";
 
 
 export default async function CommentsPage({}) {
-    const comments = await commentData()
+
+    console.log("Rendering comments:");
+
+    const response =  await fetch("http://localhost:3001/comments", { cache: "no-store" });
+    const comments: Comments[] = await response.json();
+    await new Promise((resolve) => setTimeout(resolve, 3000));
 
     return (
         <div className="space-y-4">

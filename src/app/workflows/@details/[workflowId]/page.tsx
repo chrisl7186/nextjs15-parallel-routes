@@ -1,33 +1,27 @@
 import React from 'react';
 
-import {Details, testDetailsData} from "@/data/testdata";
 import {CardContent, CardFooter} from "@/components/ui/card";
 import WorkflowDetails from "@/components/custom/workflowDetails";
 import WorkflowDetailsActions from "@/components/custom/workflowDetailsActions";
+import {Details, DynamicRouteParams} from "@/types/types";
 
-export type DynamicRouteParams = {
-    params: Promise<{
-        workflowId?: string
-    }>
-}
 
-export async function detailData(): Promise<Details> {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    return testDetailsData;
-}
+export default async function DetailsPage({params}: DynamicRouteParams) {
+//     export default async function DetailsPage() {
 
-// export default async function DetailsPage({params}: DynamicRouteParams) {
-    export default async function DetailsPage() {
 
-    // const {workflowId} = await params
-    const workflowDetails = await detailData()
+    const {workflowId} = await params
 
+    console.log("Rendering details for workflowId:", workflowId);
     // if (!workflowId) {
     //     return (
     //         <div>not found</div>
     //     )
     // }
 
+        const response =  await fetch(`http://localhost:3001/details/${workflowId}`, { cache: "no-store" });
+        const workflowDetails: Details = await response.json();
+        await new Promise((resolve) => setTimeout(resolve, 3000));
 
     return (
         <>
@@ -36,7 +30,7 @@ export async function detailData(): Promise<Details> {
             </CardContent>
             <CardFooter>
                 {/*<WorkflowDetailsActions workflowId={workflowId}/>*/}
-                <WorkflowDetailsActions workflowId={undefined}/>
+                <WorkflowDetailsActions workflowId={workflowId!}/>
             </CardFooter>
         </>
     );

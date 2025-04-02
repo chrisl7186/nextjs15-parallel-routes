@@ -1,20 +1,29 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, Suspense} from 'react';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import {DynamicRouteParams} from "@/types/types";
+import AnnoyingSelectedSegmentWrapper from "@/components/custom/annoyingSelectedSegmentWrapper";
 
 
 type WorkflowLayoutProps = {
     comments: ReactElement
     table: ReactElement
     details: ReactElement
-}
+} & DynamicRouteParams
 
 
-export default function Layout({comments, details, table}: WorkflowLayoutProps): ReactElement {
+export default async function Layout({comments, details, table}: WorkflowLayoutProps) {
+
+    // const resolved= await params;
+    // console.log(resolved);
+
 
     // console.log("table", table)
     // console.log("comments", comments)
     // console.log("details", details)
 
+    // let workflowId = 5;
+
+    // console.log(workflowId);
 
     return (
         <div className={"flex min-h-screen"}>
@@ -31,7 +40,9 @@ export default function Layout({comments, details, table}: WorkflowLayoutProps):
                                 </CardDescription>
                             </CardHeader>
                             <CardContent>
-                                {table}
+                                <Suspense fallback={<div>Loading from suspense</div>}>
+                                    {table}
+                                </Suspense>
                             </CardContent>
                         </Card>
                     </div>
@@ -45,8 +56,13 @@ export default function Layout({comments, details, table}: WorkflowLayoutProps):
                                     Some details
                                 </CardDescription>
                             </CardHeader>
-
-                            {details}
+                            <Suspense fallback={<CardContent>
+                                <div>Loading from suspense</div>
+                            </CardContent>}>
+                                <AnnoyingSelectedSegmentWrapper selectedSegment={"details"}>
+                                    {details}
+                                </AnnoyingSelectedSegmentWrapper>
+                            </Suspense>
 
                         </Card>
                     </div>
@@ -61,7 +77,11 @@ export default function Layout({comments, details, table}: WorkflowLayoutProps):
                                 </CardDescription>
                             </CardHeader>
                             <CardContent className={"overflow-auto"}>
-                                {comments}
+                                <Suspense fallback={<div>Loading from suspense</div>}>
+                                    <AnnoyingSelectedSegmentWrapper selectedSegment={"comments"}>
+                                        {comments}
+                                    </AnnoyingSelectedSegmentWrapper>
+                                </Suspense>
                             </CardContent>
                         </Card>
                     </div>
