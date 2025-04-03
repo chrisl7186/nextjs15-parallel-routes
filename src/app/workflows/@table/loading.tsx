@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function Loading({}) {
     return (
-        <div>loading table..</div>
+        <div>loading from table loading.tsx..</div>
     );
 }
