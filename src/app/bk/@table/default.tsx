@@ -1,10 +1,11 @@
 import React from 'react';
 
-import WorkflowTable from "@/components/custom/workflowTable";
+import WorkflowTable from "@/components/custom/WorkflowTable";
 import {TableData} from "@/types/types";
 
-export default async function TablePage({}) {
-    console.log("Rendering page table")
+export default async function Default({}) {
+
+    console.log("Rendering default table")
 
     const response =  await fetch("http://localhost:3001/workflows", { cache: "no-store" });
     // const response =  await fetch("http://localhost:3001/workflows");

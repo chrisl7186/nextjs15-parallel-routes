@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {CardContent, CardFooter} from "@/components/ui/card";
-import WorkflowDetails from "@/components/custom/workflowDetails";
-import WorkflowDetailsActions from "@/components/custom/workflowDetailsActions";
+import WorkflowDetails from "@/components/custom/WorkflowDetails";
+import WorkflowDetailsActions from "@/components/custom/WorkflowDetailsActions";
 import {Details, DynamicRouteParams} from "@/types/types";
 
 

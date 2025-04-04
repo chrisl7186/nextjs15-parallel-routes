@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WorkflowTable from "@/components/custom/workflowTable";
+import WorkflowTable from "@/components/custom/WorkflowTable";
 import {TableData} from "@/types/types";
 
 export default async function Default({}) {

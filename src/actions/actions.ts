@@ -19,13 +19,14 @@ export async function workflowActions(id: string, type: 'reject' | 'approve') {
     await new Promise((resolve) => setTimeout(resolve, 5000));
 
 
-    await fetch(`http://localhost:3001/workflows/${id}`, {method: "DELETE"});
+    await fetch(`http://localhost:3001/tasks/${id}`, {method: "DELETE"});
 
     // revalidatePath('/workflows')
     // revalidatePath('/workflows/2')
-    revalidatePath("/workflows");
+    // revalidatePath("/workflows");
+    revalidatePath("/workflows/tasks");
 
-    redirect('/workflows')
+    redirect('/workflows/tasks')
     // redirect('/workflows?reset=true')
     // redirect(`/workflows?reset=${Date.now()}`);
     // redirect(`/workflows?cleared=true`);

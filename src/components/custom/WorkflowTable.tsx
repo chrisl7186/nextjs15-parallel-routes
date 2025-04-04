@@ -11,9 +11,10 @@ import {TableData} from "@/types/types";
 
 type WorkflowTableProps = {
     data: TableData[]
+    serviceType?: string
 }
 
-export default function WorkflowTable({data}: WorkflowTableProps) {
+export default function WorkflowTable({data, serviceType}: WorkflowTableProps) {
     const router = useRouter();
 
     return (
@@ -43,10 +44,10 @@ export default function WorkflowTable({data}: WorkflowTableProps) {
                             <TableCell className="">{item.description}</TableCell>
                             <TableCell className="flex gap-3">
                                 <Button onClick={() => {
-                                router.push(`/workflows/${item.id}`);
+                                router.push(`/workflows/${serviceType}/${item.id}`);
                             }}>View with router push</Button>
                                 <Button asChild>
-                                    <Link href={`/workflows/${item.id}`}>View with link comp</Link>
+                                    <Link href={`/workflows/${serviceType}/${item.id}`}>View with link comp</Link>
                                 </Button>
                             </TableCell>
                         </TableRow>
